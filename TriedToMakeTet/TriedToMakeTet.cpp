@@ -16,7 +16,7 @@ int main() {
 		break;
 	}
 
-	printf("See You Next Time");
+	printf("See You Next Time!!!");
 	Sleep(1000 * 4);
 	return 0;
 }

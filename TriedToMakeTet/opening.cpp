@@ -7,10 +7,14 @@
 #include <conio.h>
 #include <windows.h>
 #include "scene_macro.h"
+#define ENTER 13
 
-int opening_operate(int sel) {
+// 操作
+int opening_operate(int sel, int *status) {
 	if (_kbhit()) {
 		int r = _getch();
+
+		//カーソル(◎)の移動
 		switch (r) {
 		case 'w':
 			sel--;
@@ -19,11 +23,18 @@ int opening_operate(int sel) {
 			sel++;
 			break;
 		}
-		sel = (sel + 3) % 3;
+
+		// statusをPLAY, MAKE, SETTINGに
+		if (r == ENTER) {
+			*status = sel + 1;
+		}
+
+		sel = (sel + 3) % 3; //ワープ
 	}
 	return sel;
 }
 
+// 表示
 void opening_show(int sel) {
 	system("cls");
 	printf("===== テト作ってみた =====\n");
@@ -36,7 +47,9 @@ int opening(int status) {
 	static int sel = 0;
 	while (status == OP) {
 		opening_show(sel);
-		sel = opening_operate(sel);
+		sel = opening_operate(sel, &status);
 	}
+	sel = 0;
+	system("cls");
 	return status;
 }
