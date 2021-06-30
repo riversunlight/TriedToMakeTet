@@ -4,4 +4,5 @@
 #define PLAY 1
 #define MAKE 2
 #define SETTING 3
-#define RESULT 4
+#define RESULT 5
+#define QUIT 4

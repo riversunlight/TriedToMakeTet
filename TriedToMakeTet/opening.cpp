@@ -29,7 +29,7 @@ int opening_operate(int sel, int *status) {
 			*status = sel + 1;
 		}
 
-		sel = (sel + 3) % 3; //ワープ
+		sel = (sel + 4) % 4; //ワープ
 	}
 	return sel;
 }
@@ -41,8 +41,11 @@ void opening_show(int sel) {
 	printf("\t%sプレイ\n", (sel == 0) ? "◎" : "  ");
 	printf("\t%sミノ作り\n", (sel == 1) ? "◎" : "  ");
 	printf("\t%s設定\n", (sel == 2) ? "◎" : "  ");
+	printf("\t%s終了\n", (sel == 3) ? "◎" : "  ");
+
 }
 
+// 流れ
 int opening(int status) {
 	static int sel = 0;
 	while (status == OP) {
