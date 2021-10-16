@@ -15,10 +15,10 @@ int main() {
 	while (status != QUIT) {
 		switch (status) {
 		case OP:
-			status = opening(status);
+			opening(status);
 			break;
 		case MAKE:
-			status = make_mino(status);
+			make_mino(status);
 			break;
 		case SETTING:
 			break;

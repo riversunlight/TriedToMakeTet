@@ -23,12 +23,11 @@ void make_show(Mino mino) {
 }
 
 // —¬‚ê
-int make_mino(int status) {
+void make_mino(int &status) {
 	Mino new_mino;
 	new_mino.init(4, 4, 0);
 	while (status == MAKE) {
 		make_show(new_mino);
 	}
 	system("cls");
-	return status;
 }

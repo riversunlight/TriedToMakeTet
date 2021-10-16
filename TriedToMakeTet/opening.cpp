@@ -10,7 +10,7 @@
 #define ENTER 13
 
 // ‘€ì
-int opening_operate(int sel, int *status) {
+void opening_operate(int& sel, int& status) {
 	if (_kbhit()) {
 		int r = _getch();
 
@@ -26,12 +26,11 @@ int opening_operate(int sel, int *status) {
 
 		// status‚ğPLAY, MAKE, SETTING‚É
 		if (r == ENTER) {
-			*status = sel + 1;
+			status = sel + 1;
 		}
 
 		sel = (sel + 4) % 4; //ƒ[ƒv
 	}
-	return sel;
 }
 
 // •\¦
@@ -46,13 +45,12 @@ void opening_show(int sel) {
 }
 
 // —¬‚ê
-int opening(int status) {
+void opening(int &status) {
 	static int sel = 0;
 	while (status == OP) {
 		opening_show(sel);
-		sel = opening_operate(sel, &status);
+		opening_operate(sel, status);
 	}
 	sel = 0;
 	system("cls");
-	return status;
 }
