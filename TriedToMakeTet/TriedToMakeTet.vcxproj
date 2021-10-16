@@ -139,11 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="color.cpp" />
     <ClCompile Include="make_mino.cpp" />
     <ClCompile Include="opening.cpp" />
     <ClCompile Include="TriedToMakeTet.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="color.h" />
+    <ClInclude Include="color_macro.h" />
     <ClInclude Include="make_mino.h" />
     <ClInclude Include="mino.h" />
     <ClInclude Include="opening.h" />
