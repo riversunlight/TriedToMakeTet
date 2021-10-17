@@ -1,8 +1,8 @@
 #pragma once
 
-#define RED 0
-#define GREEN 1
-#define YELLOW 2
-#define BLUE 3
-#define MAGENTA 4
-#define CYAN 5
+#define RED 1
+#define GREEN 2
+#define YELLOW 3
+#define BLUE 4
+#define MAGENTA 5
+#define CYAN 6

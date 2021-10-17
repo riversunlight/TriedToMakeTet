@@ -8,12 +8,12 @@
 #include "scene_macro.h"
 #include "mino.h"
 #include "color.h"
+#include "m_set.h"
 
 // 操作
-void make_operate(Mino& mino, int& sel_x, int& sel_y) {
+void make_operate(Mino& mino, int& sel_x, int& sel_y, int& mode) {
 	if (_kbhit()) {
-		int r = _getch();
-		switch (r) {
+		switch (_getch()) {
 		case 'w':
 			sel_y--;
 			break;
@@ -29,6 +29,10 @@ void make_operate(Mino& mino, int& sel_x, int& sel_y) {
 		case ' ':
 			mino.paint(sel_x, sel_y);
 			break;
+		case 'T':
+		case 't':
+			mode = M_SET;
+			break;
 		}
 		sel_x = (sel_x + mino.w) % mino.w;
 		sel_y = (sel_y + mino.h) % mino.h;
@@ -43,8 +47,6 @@ void make_show(Mino mino, int sel_x, int sel_y) {
 			// 色分け
 			if (mino.place[y][x])
 				color_change(mino);
-			else
-				color_reset();
 			
 
 			// 表示内容
@@ -52,19 +54,30 @@ void make_show(Mino mino, int sel_x, int sel_y) {
 				printf("■");
 			else
 				printf("□");
+
+			color_reset();  // 色リセット
 		}
+		if (y == 0) printf("\tTキーでミノの設定を開きます");
 		printf("\n");
 	}
+	
 }
 
 // 流れ
 void make_mino(int &status) {
 	Mino new_mino;
-	int sel_x = 0, sel_y = 0;
-	new_mino.init(4, 4, 0);
+	int sel_x = 0, sel_y = 0, mode = M_MAKE;
+	new_mino.init(4, 4, 1);
 	while (status == MAKE) {
-		make_show(new_mino, sel_x, sel_y);
-		make_operate(new_mino, sel_x, sel_y);
+		switch (mode) {
+		case M_MAKE:
+			make_show(new_mino, sel_x, sel_y);
+			make_operate(new_mino, sel_x, sel_y, mode);
+			break;
+		case M_SET:
+			m_set(new_mino, mode);
+			break;
+		}
 	}
 	system("cls");
 }
