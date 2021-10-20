@@ -140,7 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="color.cpp" />
+    <ClCompile Include="lib.cpp" />
     <ClCompile Include="make_mino.cpp" />
+    <ClCompile Include="m_quit.cpp" />
+    <ClCompile Include="m_save.cpp" />
     <ClCompile Include="m_set.cpp" />
     <ClCompile Include="opening.cpp" />
     <ClCompile Include="TriedToMakeTet.cpp" />
@@ -148,8 +151,11 @@
   <ItemGroup>
     <ClInclude Include="color.h" />
     <ClInclude Include="color_macro.h" />
+    <ClInclude Include="lib.h" />
     <ClInclude Include="make_mino.h" />
     <ClInclude Include="mino.h" />
+    <ClInclude Include="m_quit.h" />
+    <ClInclude Include="m_save.h" />
     <ClInclude Include="m_set.h" />
     <ClInclude Include="opening.h" />
     <ClInclude Include="scene_macro.h" />

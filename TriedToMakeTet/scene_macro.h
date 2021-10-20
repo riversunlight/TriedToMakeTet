@@ -10,3 +10,5 @@
 // ƒ~ƒmì‚è—p
 #define M_MAKE 0
 #define M_SET 1
+#define M_SAVE 2
+#define M_QUIT 3

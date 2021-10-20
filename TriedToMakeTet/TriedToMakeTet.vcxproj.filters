@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\make_mino">
+      <UniqueIdentifier>{1b168a96-e348-403d-b8d6-946cd66e3de6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\make_mino">
+      <UniqueIdentifier>{e6bba82f-9b96-443a-8865-5f39ec4bb1e9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TriedToMakeTet.cpp">
@@ -21,14 +27,23 @@
     <ClCompile Include="opening.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="make_mino.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="color.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="m_set.cpp">
+    <ClCompile Include="lib.cpp">
       <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="m_save.cpp">
+      <Filter>ソース ファイル\make_mino</Filter>
+    </ClCompile>
+    <ClCompile Include="m_set.cpp">
+      <Filter>ソース ファイル\make_mino</Filter>
+    </ClCompile>
+    <ClCompile Include="make_mino.cpp">
+      <Filter>ソース ファイル\make_mino</Filter>
+    </ClCompile>
+    <ClCompile Include="m_quit.cpp">
+      <Filter>ソース ファイル\make_mino</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -41,17 +56,26 @@
     <ClInclude Include="mino.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="make_mino.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="color_macro.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="color.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="m_set.h">
+    <ClInclude Include="lib.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="m_save.h">
+      <Filter>ヘッダー ファイル\make_mino</Filter>
+    </ClInclude>
+    <ClInclude Include="m_set.h">
+      <Filter>ヘッダー ファイル\make_mino</Filter>
+    </ClInclude>
+    <ClInclude Include="make_mino.h">
+      <Filter>ヘッダー ファイル\make_mino</Filter>
+    </ClInclude>
+    <ClInclude Include="m_quit.h">
+      <Filter>ヘッダー ファイル\make_mino</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

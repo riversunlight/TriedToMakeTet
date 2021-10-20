@@ -9,29 +9,45 @@
 #include "mino.h"
 #include "color.h"
 #include "m_set.h"
+#include "m_save.h"
+#include "m_quit.h"
+
+// 座標リセット
+inline void sel_reset(int& sel_x, int& sel_y) {
+	sel_x = 0; sel_y = 0;
+}
 
 // 操作
-void make_operate(Mino& mino, int& sel_x, int& sel_y, int& mode) {
+void make_operate(Mino& mino, int& sel_x, int& sel_y, bool& no_change,  int& mode) {
 	if (_kbhit()) {
 		switch (_getch()) {
-		case 'w':
+		case 'w': // 移動(上)
 			sel_y--;
 			break;
-		case 'a':
+		case 'a': // 移動(左)
 			sel_x--;
 			break;
-		case 's':
+		case 's': // 移動(下)
 			sel_y++;
 			break;
-		case 'd':
+		case 'd': // 移動(右)
 			sel_x++;
 			break;
-		case ' ':
+		case ' ': // 塗る
 			mino.paint(sel_x, sel_y);
+			no_change = false;
 			break;
-		case 'T':
+		case 'T': // 設定
 		case 't':
 			mode = M_SET;
+			break;
+		case 'X': // 保存
+		case 'x':
+			mode = M_SAVE;
+			break;
+		case 'Q': // 終了
+		case 'q':
+			mode = M_QUIT;
 			break;
 		}
 		sel_x = (sel_x + mino.w) % mino.w;
@@ -57,7 +73,10 @@ void make_show(Mino mino, int sel_x, int sel_y) {
 
 			color_reset();  // 色リセット
 		}
-		if (y == 0) printf("\tTキーでミノの設定を開きます");
+		if (y == 0) printf("\tミノの設定: Tキー");
+		if (y == 1) printf("\tミノの保存: Xキー");
+		if (y == 2) printf("\t終了      : Qキー");
+
 		printf("\n");
 	}
 	
@@ -67,15 +86,24 @@ void make_show(Mino mino, int sel_x, int sel_y) {
 void make_mino(int &status) {
 	Mino new_mino;
 	int sel_x = 0, sel_y = 0, mode = M_MAKE;
+	bool no_change = true;
 	new_mino.init(4, 4, 1);
 	while (status == MAKE) {
 		switch (mode) {
 		case M_MAKE:
 			make_show(new_mino, sel_x, sel_y);
-			make_operate(new_mino, sel_x, sel_y, mode);
+			make_operate(new_mino, sel_x, sel_y, no_change, mode);
 			break;
 		case M_SET:
 			m_set(new_mino, mode);
+			sel_reset(sel_x, sel_y);
+			break;
+		case M_SAVE:
+			m_save(new_mino, mode);
+			no_change = true;
+			break;
+		case M_QUIT:
+			m_quit(new_mino, no_change, mode, status);
 			break;
 		}
 	}
