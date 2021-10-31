@@ -8,6 +8,7 @@
 #include "mino.h"
 #include "opening.h"
 #include "make_mino.h"
+#include "setting.h"
 
 int main() {
 	int status = OP;
@@ -17,10 +18,13 @@ int main() {
 		case OP:
 			opening(status);
 			break;
+		case PLAY:
+			break;
 		case MAKE:
 			make_mino(status);
 			break;
 		case SETTING:
+			setting(status);
 			break;
 		case RESULT:
 			break;

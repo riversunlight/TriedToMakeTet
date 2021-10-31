@@ -12,3 +12,12 @@
 #define M_SET 1
 #define M_SAVE 2
 #define M_QUIT 3
+
+// ê›íËóp
+#define S_SET 0
+#define S_SIZE 1
+#define S_MAPP 2
+#define S_MDEL 3
+#define S_TIME 4
+#define S_RDEL 5
+#define S_QUIT 6

@@ -146,6 +146,7 @@
     <ClCompile Include="m_save.cpp" />
     <ClCompile Include="m_set.cpp" />
     <ClCompile Include="opening.cpp" />
+    <ClCompile Include="setting.cpp" />
     <ClCompile Include="TriedToMakeTet.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="m_set.h" />
     <ClInclude Include="opening.h" />
     <ClInclude Include="scene_macro.h" />
+    <ClInclude Include="setting.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

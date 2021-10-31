@@ -19,6 +19,12 @@
     <Filter Include="ヘッダー ファイル\make_mino">
       <UniqueIdentifier>{e6bba82f-9b96-443a-8865-5f39ec4bb1e9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\setting">
+      <UniqueIdentifier>{7bd315d0-30aa-406a-9eff-fc3bae0f2f06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\setting">
+      <UniqueIdentifier>{424b1768-6eed-4841-b9e3-093d5664cf38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TriedToMakeTet.cpp">
@@ -44,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="m_quit.cpp">
       <Filter>ソース ファイル\make_mino</Filter>
+    </ClCompile>
+    <ClCompile Include="setting.cpp">
+      <Filter>ソース ファイル\setting</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +85,9 @@
     </ClInclude>
     <ClInclude Include="m_quit.h">
       <Filter>ヘッダー ファイル\make_mino</Filter>
+    </ClInclude>
+    <ClInclude Include="setting.h">
+      <Filter>ヘッダー ファイル\setting</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
